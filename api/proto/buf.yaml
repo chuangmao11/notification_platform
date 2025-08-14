@@ -1,4 +1,4 @@
-version: v1
+version: v2
 deps:
   - buf.build/googleapis/googleapis
 breaking:
@@ -14,7 +14,7 @@ lint:
     - google/type/datetime.proto
     - google/protobuf/empty.proto
     - google/protobuf/timestamp.proto
-  allow_comment_ignores: true
+  disallow_comment_ignores: false # The default behavior of this key has changed from v1
   enum_zero_value_suffix: _UNSPECIFIED
   rpc_allow_same_request_response: false
   rpc_allow_google_protobuf_empty_requests: false

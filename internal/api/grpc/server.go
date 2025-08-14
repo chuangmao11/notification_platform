@@ -2,6 +2,7 @@ package grpc
 
 import (
 	"context"
+
 	notificationv1 "github.com/chuangmao11/notification_platform/api/proto/gen/notification/v1"
 )
 
