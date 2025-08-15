@@ -13,6 +13,12 @@ if ! RESULT=$(make lint); then
   exit 1
 fi
 
+# 检查是否存在测试配置文件，如果不存在则跳过集成测试
+if [ ! -f "scripts/test_docker_compose.yml" ]; then
+  echo >&2 "跳过集成测试（未找到 scripts/test_docker_compose.yml）"
+  exit 0
+fi
+
 # 运行集成测试，如果失败则退出
 printf "运行集成测试..."
 if ! RESULT=$(make e2e); then
