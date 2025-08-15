@@ -1,3 +1,4 @@
+# golangci-lint configuration file
 # options for analysis running
 run:
   go: '1.24'
@@ -121,7 +122,6 @@ linters:
 
     # Same as `cyclop` linter (see above)
     - gocognit
-    - goconst
     - gocyclo
 
     # As you already know I'm a co-author. It would be strange to not use
@@ -233,6 +233,4 @@ linters:
     # Forces you to use empty lines. Great if configured correctly.
 #    对于换行之类的来说，wsl 的检测规则和我代码的分组形式冲突了
 #    - wsl
-
-# Options for analysis running.
 

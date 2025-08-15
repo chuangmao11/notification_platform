@@ -46,7 +46,7 @@ func (j *JSON) UnmarshalJSON(data []byte) error {
 	if j == nil {
 		return errors.New("null point exception")
 	}
-	//（*j）解引用，获取j指针指向的JSON值
+	// （*j）解引用，获取j指针指向的JSON值
 	*j = append((*j)[0:0], data...)
 	return nil
 }
