@@ -8,7 +8,6 @@ import (
 	"testing"
 
 	notificationv1 "github.com/chuangmao11/notification_platform/api/proto/gen/notification/v1"
-	grpcapi "github.com/chuangmao11/notification_platform/internal/api/grpc"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 	"google.golang.org/grpc"
@@ -32,7 +31,7 @@ func (s *ServerTestSuite) SetupSuite() {
 
 	//启动grpc server
 	s.grpcServer = grpc.NewServer()
-	notificationv1.RegisterNotificationServiceServer(s.grpcServer, &grpcapi.Server{})
+	notificationv1.RegisterNotificationServiceServer(s.grpcServer, &Server{})
 
 	ready := make(chan struct{})
 	go func() {
