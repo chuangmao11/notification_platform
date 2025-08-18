@@ -8,6 +8,7 @@ import (
 	"testing"
 
 	notificationv1 "github.com/chuangmao11/notification_platform/api/proto/gen/notification/v1"
+	//grpcapi "github.com/chuangmao11/notification_platform/internal/api/grpc"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 	"google.golang.org/grpc"

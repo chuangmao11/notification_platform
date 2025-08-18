@@ -7,25 +7,29 @@ import (
 )
 
 type Server struct {
-	notificationv1.UnimplementedCallbackServiceServer
+	notificationv1.UnimplementedNotificationServiceServer
 }
 
-func (s *Server) SendNotification(ctx context.Context, req *notificationv1.SendNotificationRequest) (*notificationv1.SendNotificationResponse, error) {
+func (s *Server) SendNotification(ctx context.Context, request *notificationv1.SendNotificationRequest) (*notificationv1.SendNotificationResponse, error) {
 	return &notificationv1.SendNotificationResponse{}, nil
 }
 
-func (s *Server) SendNotificationAsync(ctx context.Context, req *notificationv1.SendNotificationAsyncRequest) (*notificationv1.SendNotificationAsyncResponse, error) {
+func (s *Server) SendNotificationAsync(ctx context.Context, request *notificationv1.SendNotificationAsyncRequest) (*notificationv1.SendNotificationAsyncResponse, error) {
+	// TODO implement me
 	panic("implement me")
 }
 
-func (s *Server) BatchSendNotifications(ctx context.Context, req *notificationv1.BatchSendNotificationsRequest) (*notificationv1.BatchSendNotificationsResponse, error) {
+func (s *Server) BatchSendNotifications(ctx context.Context, request *notificationv1.BatchSendNotificationsRequest) (*notificationv1.BatchSendNotificationsResponse, error) {
+	// TODO implement me
 	panic("implement me")
 }
 
-func (s *Server) BatchSendNotificationsAsync(ctx context.Context, req *notificationv1.BatchSendNotificationsAsyncRequest) (*notificationv1.BatchSendNotificationsAsyncResponse, error) {
+func (s *Server) BatchSendNotificationsAsync(ctx context.Context, request *notificationv1.BatchSendNotificationsAsyncRequest) (*notificationv1.BatchSendNotificationsAsyncResponse, error) {
+	// TODO implement me
 	panic("implement me")
 }
 
-func (s *Server) QueryNotification(ctx context.Context, req *notificationv1.QueryNotificationRequest) (*notificationv1.QueryNotificationResponse, error) {
+func (s *Server) QueryNotification(ctx context.Context, request *notificationv1.QueryNotificationRequest) (*notificationv1.QueryNotificationResponse, error) {
+	// TODO implement me
 	panic("implement me")
 }
