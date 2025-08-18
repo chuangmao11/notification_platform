@@ -4,11 +4,12 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
+	"time"
+
 	"github.com/ecodeclub/ekit/retry"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
-	"time"
 )
 
 func WaitForDBSetup(dsn string) {
@@ -25,7 +26,7 @@ func WaitForDBSetup(dsn string) {
 	const timeout = 5 * time.Second
 	for {
 		ctx, cancel := context.WithTimeout(context.Background(), timeout)
-		//这里是进行真正的连接测试
+		// 这里是进行真正的连接测试
 		err = sqlDB.PingContext(ctx)
 		cancel()
 		if err == nil {
@@ -47,7 +48,7 @@ func InitDB() *gorm.DB {
 	}
 	db, err := gorm.Open(mysql.Open(dsn), config)
 	if err != nil {
-		panic(fmt.Errorf("数据库连接失败:%v", err))
+		panic(fmt.Errorf("数据库连接失败:%w", err))
 	}
 	return db
 }

@@ -1,12 +1,13 @@
 package test
 
 import (
-	"github.com/chuangmao11/notification_platform/internal/test/ioc"
 	"log"
 	"testing"
+
+	"github.com/chuangmao11/notification_platform/internal/test/ioc"
 )
 
-func TestIoc(t *testing.T) {
+func TestIoc(*testing.T) {
 	ioc.InitDB()
 	log.Println("启动db成功")
 	ioc.InitCache()

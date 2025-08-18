@@ -28,7 +28,7 @@ func InitMQ() mq.MQ {
 			if err == nil {
 				break
 			}
-			//计算下次的等待时间
+			// 计算下次的等待时间
 			next, ok := strategy.Next()
 			if !ok {
 				panic("InitMQ 重试失败......")
